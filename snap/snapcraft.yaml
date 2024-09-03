@@ -1,0 +1,58 @@
+name: kew
+adopt-info: kew
+summary: Listen to music in the terminal.
+description: |
+  Listen to music in the terminal.
+    
+license: GPL-2.0
+
+base: core24
+grade: stable 
+confinement: strict
+compression: lzo
+
+
+apps:
+  kew:
+    command: usr/bin/kew
+    plugs:
+      - home
+      - audio-playack
+      - x11
+      
+parts:
+  kew:
+    source: https://github.com/ravachol/kew
+    source-type: git
+    plugin: make
+    build-packages:
+      - ffmpeg 
+      - libfftw3-dev 
+      - libopus-dev 
+      - libopusfile-dev 
+      - libvorbis-dev 
+      - git 
+      - gcc 
+      - make 
+      - libchafa-dev 
+      - libfreeimage-dev 
+      - libavformat-dev 
+      - libglib2.0-dev 
+      
+    stage-packages:
+      - ffmpeg 
+      - libfftw3-dev 
+      - libopus-dev 
+      - libopusfile-dev 
+      - libvorbis-dev 
+      - git 
+      - gcc 
+      - make 
+      - libchafa-dev 
+      - libfreeimage-dev 
+      - libavformat-dev 
+      - libglib2.0-dev 
+      
+    override-pull: |
+      craftctl default
+      craftctl set version="$(git describe --tags | sed 's/^v//' | cut -d "-" -f1)"       
