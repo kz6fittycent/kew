@@ -39,7 +39,7 @@ parts:
       - libavformat-dev 
       - libglib2.0-dev 
       - libz3-dev
-      - libffi-dev
+      - libffi8
       
     stage-packages:
       - ffmpeg 
@@ -55,7 +55,7 @@ parts:
       - libavformat-dev 
       - libglib2.0-dev 
       - libz3-dev
-      - libffi-dev
+      - libffi8
       
     override-pull: |
       craftctl default
