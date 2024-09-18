@@ -27,6 +27,9 @@ parts:
     plugin: nil
     override-build: |
       bash -c "curl https://raw.githubusercontent.com/ravachol/kew/main/install.sh | bash"
+
+    build-packages:
+      - sudo
       
     override-pull: |
       craftctl default
