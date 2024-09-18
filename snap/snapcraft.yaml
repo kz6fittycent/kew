@@ -24,38 +24,9 @@ parts:
   kew:
     source: https://github.com/ravachol/kew
     source-type: git
-    plugin: make
-    build-packages:
-      - ffmpeg 
-      - libfftw3-dev 
-      - libopus-dev 
-      - libopusfile-dev 
-      - libvorbis-dev 
-      - git 
-      - gcc 
-      - make 
-      - libchafa-dev 
-      - libfreeimage-dev 
-      - libavformat-dev 
-      - libglib2.0-dev 
-      - libz3-dev
-      - libffi8
-      
-    stage-packages:
-      - ffmpeg 
-      - libfftw3-dev 
-      - libopus-dev 
-      - libopusfile-dev 
-      - libvorbis-dev 
-      - git 
-      - gcc 
-      - make 
-      - libchafa-dev 
-      - libfreeimage-dev 
-      - libavformat-dev 
-      - libglib2.0-dev 
-      - libz3-dev
-      - libffi8
+    plugin: nil
+    override-build: |
+      bash -c "curl https://raw.githubusercontent.com/ravachol/kew/main/install.sh | bash"
       
     override-pull: |
       craftctl default
