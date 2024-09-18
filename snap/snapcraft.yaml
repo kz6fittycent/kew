@@ -38,6 +38,7 @@ parts:
       - libfreeimage-dev 
       - libavformat-dev 
       - libglib2.0-dev 
+      - libz3-dev
       
     stage-packages:
       - ffmpeg 
@@ -52,6 +53,7 @@ parts:
       - libfreeimage-dev 
       - libavformat-dev 
       - libglib2.0-dev 
+      - libz3-dev
       
     override-pull: |
       craftctl default
